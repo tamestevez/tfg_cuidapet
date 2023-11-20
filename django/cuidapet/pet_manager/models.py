@@ -1,13 +1,12 @@
 from django.db import models
 from insurance_manager.models import InsurancePolice
-from cuidapet.constants import SEX, ROLE, NATIONALITY
+from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE
 from users_manager.models import BaseUser
 # Create your models here.
 
 class Animal(models.Model):
     name=models.CharField(max_length=50, blank=False, null=False, verbose_name="Nombre")
-    specie=models.CharField(max_length=25, verbose_name="Especie")
-    breed=models.CharField(max_length=25, verbose_name="Raza")
+    specie=models.CharField(max_length=50, choices=SPECIE, verbose_name="Especie")
     sex=models.CharField(max_length=1, choices=SEX, default="F", verbose_name="Sexo")
     birth_date=models.DateField(verbose_name="Fecha de nacimiento")
     color=models.CharField(max_length=15, verbose_name="Color")

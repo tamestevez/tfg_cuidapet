@@ -4,6 +4,6 @@ from .models import InsurancePolice
 # Register your models here.
 
 class InsurancePoliceAdmin(admin.ModelAdmin):
-    pass
+   pass
 
 admin.site.register(InsurancePolice, InsurancePoliceAdmin)
