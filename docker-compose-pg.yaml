@@ -1,0 +1,51 @@
+version: "3.8"
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: django/Dockerfile
+    working_dir: /app/
+    volumes:
+      - ./django/cuidapet:/app:rw
+    ports:
+      - 8000:8000
+    env_file:
+      - django/django.env
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+       postgres_db:
+         condition: service_healthy
+  
+  postgres_db:
+    build:
+      context: .
+      dockerfile: postgres_db/Dockerfile
+    env_file:
+      - django/django.env
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=insecure-mdd7ca5-3a_kmzl4
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "pg_isready -d $${DJANGO_DATABASE_DB} -U $${DJANGO_DATABASE_USER}"
+        ]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  
+  pgadmin:
+    image: dpage/pgadmin4:7.4
+    env_file:
+     - django/django.env
+    ports:
+      - 9000:80
+    depends_on:
+      - postgres_db
+
+
+volumes:
+  postgres:
