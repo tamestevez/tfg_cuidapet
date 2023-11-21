@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import MedicalHistory, Vacine, Treatment, Disease, Surgery
+from .models import MedicalHistory, Vaccine, Treatment, Disease, Surgery
 
 # Register your models here.
-class VacineInline(admin.StackedInline):
-    model=Vacine
+class VaccineInline(admin.StackedInline):
+    model=Vaccine
     extra=0
 
 
@@ -21,7 +21,7 @@ class TreatmentInline(admin.StackedInline):
 
 class MedicalHistoryAdmin(admin.ModelAdmin):
     inlines=[
-        VacineInline,
+        VaccineInline,
         TreatmentInline,
         DiseaseInline,
         SurgeryInline,

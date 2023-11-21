@@ -45,8 +45,8 @@ class Medicine(models.Model):
     veterinary_clinic=models.ForeignKey(BaseUser, on_delete=models.CASCADE, verbose_name="Clínica veterinaria")
     medical_history=models.ForeignKey(MedicalHistory, on_delete=models.CASCADE)
 
-class Vacine(Medicine):
-    vacine_type=models.CharField(max_length=25, verbose_name="Tipo de vacuna")
+class Vaccine(Medicine):
+    vaccine_type=models.CharField(max_length=25, verbose_name="Tipo de vacuna")
     vaccination_date=models.DateField(verbose_name="Fecha de vacunación")
 
     class Meta:
