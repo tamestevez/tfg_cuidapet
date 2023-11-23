@@ -142,3 +142,27 @@ COLOR = [
     ("08", "Verde"), 
     ("09", "Rosa"),
 ]
+
+ATTITUDES = [
+    ("00", "Ágil"), 
+    ("01", "Alerta"), 
+    ("02", "Amistoso"),
+    ("03", "Astuto"),
+    ("04", "Cariñoso"),
+    ("05", "Caución"),
+    ("06", "Dócil"),
+    ("07", "Energético"),
+    ("08", "Fiel"),
+    ("09", "Independiente"),
+    ("10", "Inteligente"),
+    ("11", "Juguetón"),
+    ("12", "Leal"),
+    ("13", "Obediente"),
+    ("14", "Protector"),
+    ("15", "Rápido"),
+    ("16", "Reservado"),
+    ("17", "Sociable"),
+    ("18", "Valiente"),
+    ("19", "Versátil"),
+]
+
