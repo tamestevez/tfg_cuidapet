@@ -81,3 +81,21 @@ DEATH_CAUSE=[
     ("18", "Problemas Metabólicos"),
     ("19", "Traumatismos"),
 ]
+
+TREATMENT_TYPE=[
+    ("00", "Desparasitación"), 
+    ("01", "Fisioterapia"),
+    ("02", "Inyecciones"),
+    ("03", "Medicamentos Orales"),
+    ("04", "Quimioterapia"),
+    ("05", "Radioterapia"),
+    ("06", "Terapia Conductual"),
+    ("07", "Terapia de Fluidos"),
+    ("08", "Terapia de Oxígeno"), 
+    ("09", "Terapia Hormonal"), 
+    ("10", "Terapia Laser"), 
+    ("11", "Terapia Nutricional"), 
+    ("12", "Tratamientos Dentales"), 
+    ("13", "Tratamientos Homeopáticos"), 
+    ("14", "Tratamientos Tópicos"),
+]

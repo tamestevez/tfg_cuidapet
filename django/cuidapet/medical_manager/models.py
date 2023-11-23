@@ -1,6 +1,7 @@
 from django.db import models
 from pet_manager.models import Animal
 from users_manager.models import BaseUser
+from cuidapet.constants import TREATMENT_TYPE
 
 # Create your models here.
 
@@ -54,7 +55,7 @@ class Vaccine(Medicine):
         verbose_name_plural="Vacunas"
 
 class Treatment(Medicine):
-    treatment_type=models.CharField(max_length=25, verbose_name="Tipo de tratamiento")
+    treatment_type=models.CharField(max_length=2, choices=TREATMENT_TYPE, default="00", verbose_name="Tipo de tratamiento")
     chronic=models.BooleanField(default=False, verbose_name="Crónico")
 
     class Meta:
