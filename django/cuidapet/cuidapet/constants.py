@@ -118,3 +118,14 @@ SURGERY_TYPE=[
     ("14", "Cirugía de Vías Respiratorias"),
     ("15", "Cirugía de Vías Urinarias"), 
 ]
+
+VACCINE_TYPE=[
+    ("00", "Bacterianas vivas atenuadas"), 
+    ("01", "Bacterianas inactivadas"),
+    ("02", "Inmunidad pasiva"), 
+    ("03", "Recombinantes"), 
+    ("04", "Subunitarias"),
+    ("05", "Toxoides"), 
+    ("06", "Víricas vivas atenuadas"), 
+    ("07", "Víricas inactivadas"), 
+]
