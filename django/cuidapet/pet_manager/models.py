@@ -1,6 +1,6 @@
 from django.db import models
 from insurance_manager.models import InsurancePolice
-from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE
+from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE, MARKING_TYPE
 from users_manager.models import BaseUser
 # Create your models here.
 
@@ -33,7 +33,7 @@ class Animal(models.Model):
 
 class Marking(models.Model):
     code=models.CharField(max_length=15, unique=True, null=False, blank=False, verbose_name="Código")
-    marking_type=models.CharField(max_length=4, verbose_name="Tipo de marca")
+    marking_type=models.CharField(max_length=2, choices=MARKING_TYPE, default="05", verbose_name="Tipo de marca")
     expedition_date=models.DateField(verbose_name="Fecha de colocación")
     location=models.CharField(max_length=50, verbose_name="Localización de la marca")
     veterinary_clinic=models.ForeignKey(BaseUser, on_delete=models.CASCADE, verbose_name="Clínica veterinaria")

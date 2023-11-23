@@ -47,3 +47,14 @@ SPECIE=(
 TOWN=[
     (town['codigo'], town['provincia']) for town in get_constants('towns')['results']
 ]
+
+MARKING_TYPE=[
+    ("00", "Anilla"),
+    ("01","Branding"),
+    ("02", "Collar de seguimiento"),
+    ("03", "Etiqueta"),
+    ("04", "Marca"),
+    ("05", "Microchip"),
+    ("06", "Tatuaje"),
+    ("07", "Tinta"),
+]
