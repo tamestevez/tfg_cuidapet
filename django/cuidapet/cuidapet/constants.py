@@ -166,3 +166,26 @@ ATTITUDES = [
     ("19", "Versátil"),
 ]
 
+ALERGY=[
+    ("00", "Ácaros del polvo"),
+    ("01", "Alimentos"),
+    ("02", "Hongos"),
+    ("03", "Insectos picadores"),
+    ("04", "Moho"),
+    ("05", "Pasto"),
+    ("06", "Plantas"),
+    ("07", "Productos químicos"),
+    ("08", "Proteínas de saliva de pulgas"),
+    ("09", "Productos de cuidado personal"),
+    ("10", "Polen"),
+    ("11", "Polvo"),
+    ("12", "Medicamentos"),
+    ("13", "Pelaje de otros animales"),
+    ("14", "Plumas"),
+    ("15", "Productos de limpieza y detergentes"),
+    ("16", "Sustancias químicas en el entorno "),
+    ("17", "Polvo de heno"),
+    ("18", "Humo de tabaco"),
+    ("19", "Sustancias presentes en juguetes y accesorios para mascotas"),
+    ("20", "Virus y bacterias"),
+]

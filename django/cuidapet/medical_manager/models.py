@@ -1,13 +1,15 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 from pet_manager.models import Animal
 from users_manager.models import BaseUser
-from cuidapet.constants import TREATMENT_TYPE, SURGERY_TYPE, VACCINE_TYPE
+from cuidapet.constants import TREATMENT_TYPE, SURGERY_TYPE, VACCINE_TYPE,ALERGY
 
 # Create your models here.
 
 class MedicalHistory(models.Model):
     animal=models.ForeignKey(Animal, blank=True, null=True, on_delete=models.CASCADE, verbose_name="Aminal")
-    allergy=models.CharField(max_length=255, blank=True, null=True, verbose_name="Alergias")
+    allergy=MultiSelectField(max_length=25, choices=ALERGY, blank=True, null=True, verbose_name="Alergias")
+    allergy_description=models.CharField(max_length=255, null=True, blank=True, verbose_name="Descripción de alergias")
 
     def __str__(self) -> str:
         return self.animal.name
