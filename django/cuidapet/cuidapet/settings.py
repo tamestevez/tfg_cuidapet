@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "insurance_manager", 
     "pet_manager",
     "medical_manager",
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,7 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 from insurance_manager.models import InsurancePolice
-from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE, MARKING_TYPE, DEATH_CAUSE
+from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE, MARKING_TYPE, DEATH_CAUSE, COLOR
 from users_manager.models import BaseUser
 # Create your models here.
 
@@ -9,7 +10,7 @@ class Animal(models.Model):
     specie=models.CharField(max_length=50, choices=SPECIE, verbose_name="Especie")
     sex=models.CharField(max_length=1, choices=SEX, default="F", verbose_name="Sexo")
     birth_date=models.DateField(verbose_name="Fecha de nacimiento")
-    color=models.CharField(max_length=15, verbose_name="Color")
+    color=MultiSelectField(max_length=50, choices=COLOR, verbose_name="Color")
     notable_characteristics=models.CharField(max_length=255, verbose_name="Caracteristicas")
     owner=models.ForeignKey(BaseUser, blank=True, null=True, on_delete=models.CASCADE, verbose_name="Propietario")
     ppp=models.BooleanField(default=False, verbose_name="PPP")

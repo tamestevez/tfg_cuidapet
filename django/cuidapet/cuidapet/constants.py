@@ -129,3 +129,16 @@ VACCINE_TYPE=[
     ("06", "Víricas vivas atenuadas"), 
     ("07", "Víricas inactivadas"), 
 ]
+
+COLOR = [
+    ("00", "Amarillo"),
+    ("01", "Azul"), 
+    ("02", "Blanco"),
+    ("03", "Gris"),
+    ("04", "Marrón"),
+    ("05", "Naranja"),
+    ("06", "Negro"),
+    ("07", "Rojo"),
+    ("08", "Verde"), 
+    ("09", "Rosa"),
+]
