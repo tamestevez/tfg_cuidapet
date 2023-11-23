@@ -1,7 +1,7 @@
 from django.db import models
 from pet_manager.models import Animal
 from users_manager.models import BaseUser
-from cuidapet.constants import TREATMENT_TYPE
+from cuidapet.constants import TREATMENT_TYPE, SURGERY_TYPE
 
 # Create your models here.
 
@@ -26,7 +26,7 @@ class Disease(models.Model):
         verbose_name_plural="Enfermedades"
 
 class Surgery(models.Model):
-    surgery_type=models.CharField(max_length=25, verbose_name="Tipo de cirugía")
+    surgery_type=models.CharField(max_length=25, choices=SURGERY_TYPE, default="00", verbose_name="Tipo de cirugía")
     description=models.CharField(max_length=1024, verbose_name="Descripción")
     veterinary_clinic=models.ForeignKey(BaseUser, on_delete=models.CASCADE, verbose_name="Clínica veterinaria")
     realization_date=models.DateField(verbose_name="Fecha de realización")

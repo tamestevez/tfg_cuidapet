@@ -99,3 +99,22 @@ TREATMENT_TYPE=[
     ("13", "Tratamientos Homeopáticos"), 
     ("14", "Tratamientos Tópicos"),
 ]
+
+SURGERY_TYPE=[
+    ("00", "Cirugía Cardiovascular"), 
+    ("01", "Cirugía de Emergencia"), 
+    ("02", "Cirugía Dental"), 
+    ("03", "Cirugía Gastrointestinal"),
+    ("04", "Cirugía Neurológica"),
+    ("05", "Cirugía Oftalmológica"),
+    ("06", "Cirugía de Oído"),
+    ("07", "Cirugía Oncológica"), 
+    ("08", "Cirugía Ortopédica"), 
+    ("09", "Cirugía Urológica"),
+    ("10", "Cirugía de Reconstrucción"),
+    ("11", "Cirugía de Tejidos Blandos"), 
+    ("12", "Cirugía de Tejidos Reproductivos"), 
+    ("13", "Cirugía de Tumores"), 
+    ("14", "Cirugía de Vías Respiratorias"),
+    ("15", "Cirugía de Vías Urinarias"), 
+]
