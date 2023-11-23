@@ -5,6 +5,7 @@ api_switch={
     'nationalities': 'https://restcountries.com/v3.1/all',
     'dogs':'https://api.thedogapi.com/v1/breeds',
     'cats':'https://api.thecatapi.com/v1/breeds',
+    'towns':'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/provincias-espanolas/records?order_by=cod_ccaa%2Cprovincia&limit=52'
 }
 
 def get_constants(const):

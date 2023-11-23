@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
-from cuidapet.constants import ROLE
+from cuidapet.constants import ROLE, TOWN
 
 # Create your models here.
 
@@ -38,7 +38,7 @@ class BaseUser(AbstractUser):
     surnames=models.CharField( blank=True, null=True, verbose_name="Apellidos",)
     phone_number=models.CharField(max_length=15, verbose_name="Teléfono")
     address=models.CharField(max_length=50, null=True, blank=True, verbose_name="Dirección")
-    town=models.CharField(max_length=25, blank=True, null=True, verbose_name="Ciudad")
+    town=models.CharField(max_length=2, blank=True, null=True, choices=TOWN, verbose_name="Ciudad")
     role=models.CharField(max_length=4, choices=ROLE, default="ADMI", verbose_name="Permisos")
 
 

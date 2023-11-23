@@ -1,4 +1,6 @@
 from .utils import get_constants
+
+
 NATIONALITY=[
    (country['cca2'], country['translations']['spa']['common']) for country in get_constants('nationalities')
 ]
@@ -41,3 +43,7 @@ SPECIE=(
         ('OTRO', 'Otro'),
     ]),
 )
+
+TOWN=[
+    (town['codigo'], town['provincia']) for town in get_constants('towns')['results']
+]
