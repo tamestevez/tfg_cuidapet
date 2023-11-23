@@ -1,6 +1,6 @@
 from django.db import models
 from insurance_manager.models import InsurancePolice
-from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE, MARKING_TYPE
+from cuidapet.constants import SEX, ROLE, NATIONALITY, SPECIE, MARKING_TYPE, DEATH_CAUSE
 from users_manager.models import BaseUser
 # Create your models here.
 
@@ -55,7 +55,7 @@ class Passport(models.Model):
 class DeathRecord(models.Model):
     death_date=models.DateField(verbose_name="Fecha de fallecimiento")
     veterinary_clinic=models.ForeignKey(BaseUser, on_delete=models.CASCADE, verbose_name="Clinica Veterinaria")
-    cause=models.CharField(max_length=50, verbose_name="Causa")
+    cause=models.CharField(max_length=50, choices=DEATH_CAUSE, null=True, blank=True, verbose_name="Causa")
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE, null=True, verbose_name="Animal")
 
     class Meta:

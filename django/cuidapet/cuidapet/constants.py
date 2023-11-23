@@ -58,3 +58,26 @@ MARKING_TYPE=[
     ("06", "Tatuaje"),
     ("07", "Tinta"),
 ]
+
+DEATH_CAUSE=[
+    ("00", "Cáncer"), 
+    ("01", "Diabetes"),
+    ("02", "Diarrea Neonatal"),
+    ("03", "Enfermedades Cardíacas"),
+    ("04", "Enfermedades Gastrointestinales"),
+    ("05", "Enfermedades Infecciosas"),
+    ("06", "Enfermedades Metabólicas"),
+    ("07", "Enfermedades Renales"),
+    ("08", "Enfermedades Respiratorias"),
+    ("09", "Envenenamiento"),
+    ("10", "Insuficiencia Renal"),
+    ("11", "Infecciones Clostridiales"),
+    ("12", "Infecciones Reproductivas"),
+    ("13", "Infecciones Virales"),
+    ("14", "Parásitos Internos y Externos"),
+    ("15", "Problemas de Alimentación"), 
+    ("16", "Problemas de Parto"), 
+    ("17", "Problemas de Pie y Pezuña"),
+    ("18", "Problemas Metabólicos"),
+    ("19", "Traumatismos"),
+]
