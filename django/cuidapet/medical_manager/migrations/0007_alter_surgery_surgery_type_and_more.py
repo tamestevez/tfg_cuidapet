@@ -6,18 +6,54 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('medical_manager', '0006_alter_surgery_surgery_type'),
+        ("medical_manager", "0006_alter_surgery_surgery_type"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='surgery',
-            name='surgery_type',
-            field=models.CharField(choices=[('00', 'Cirugía Cardiovascular'), ('01', 'Cirugía de Emergencia'), ('02', 'Cirugía Dental'), ('03', 'Cirugía Gastrointestinal'), ('04', 'Cirugía Neurológica'), ('05', 'Cirugía Oftalmológica'), ('06', 'Cirugía de Oído'), ('07', 'Cirugía Oncológica'), ('08', 'Cirugía Ortopédica'), ('09', 'Cirugía Urológica'), ('10', 'Cirugía de Reconstrucción'), ('11', 'Cirugía de Tejidos Blandos'), ('12', 'Cirugía de Tejidos Reproductivos'), ('13', 'Cirugía de Tumores'), ('14', 'Cirugía de Vías Respiratorias'), ('15', 'Cirugía de Vías Urinarias')], default='00', max_length=2, verbose_name='Tipo de cirugía'),
+            model_name="surgery",
+            name="surgery_type",
+            field=models.CharField(
+                choices=[
+                    ("00", "Cirugía Cardiovascular"),
+                    ("01", "Cirugía de Emergencia"),
+                    ("02", "Cirugía Dental"),
+                    ("03", "Cirugía Gastrointestinal"),
+                    ("04", "Cirugía Neurológica"),
+                    ("05", "Cirugía Oftalmológica"),
+                    ("06", "Cirugía de Oído"),
+                    ("07", "Cirugía Oncológica"),
+                    ("08", "Cirugía Ortopédica"),
+                    ("09", "Cirugía Urológica"),
+                    ("10", "Cirugía de Reconstrucción"),
+                    ("11", "Cirugía de Tejidos Blandos"),
+                    ("12", "Cirugía de Tejidos Reproductivos"),
+                    ("13", "Cirugía de Tumores"),
+                    ("14", "Cirugía de Vías Respiratorias"),
+                    ("15", "Cirugía de Vías Urinarias"),
+                ],
+                default="00",
+                max_length=2,
+                verbose_name="Tipo de cirugía",
+            ),
         ),
         migrations.AlterField(
-            model_name='vaccine',
-            name='vaccine_type',
-            field=models.CharField(choices=[('00', 'Bacterianas vivas atenuadas'), ('01', 'Bacterianas inactivadas'), ('02', 'Inmunidad pasiva'), ('03', 'Recombinantes'), ('04', 'Subunitarias'), ('05', 'Toxoides'), ('06', 'Víricas vivas atenuadas'), ('07', 'Víricas inactivadas')], default='00', max_length=2, verbose_name='Tipo de vacuna'),
+            model_name="vaccine",
+            name="vaccine_type",
+            field=models.CharField(
+                choices=[
+                    ("00", "Bacterianas vivas atenuadas"),
+                    ("01", "Bacterianas inactivadas"),
+                    ("02", "Inmunidad pasiva"),
+                    ("03", "Recombinantes"),
+                    ("04", "Subunitarias"),
+                    ("05", "Toxoides"),
+                    ("06", "Víricas vivas atenuadas"),
+                    ("07", "Víricas inactivadas"),
+                ],
+                default="00",
+                max_length=2,
+                verbose_name="Tipo de vacuna",
+            ),
         ),
     ]

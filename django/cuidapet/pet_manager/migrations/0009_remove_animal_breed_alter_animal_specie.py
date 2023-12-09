@@ -6,17 +6,45 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pet_manager', '0008_alter_animal_specie'),
+        ("pet_manager", "0008_alter_animal_specie"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='animal',
-            name='breed',
+            model_name="animal",
+            name="breed",
         ),
         migrations.AlterField(
-            model_name='animal',
-            name='specie',
-            field=models.CharField(choices=[('Perro', (('PASTOR ALEMAN', 'Pastor Alemán'), ('PITWEILER', 'Pitweiler'))), ('Gato', (('HABANA', 'Habana'), ('ELFO', 'Elfo'))), ('Exótico', (('AVE', 'Ave'), ('ARAÑA', 'Araña'), ('CHINCHILLA', 'Chinchilla'), ('COBAYA', 'Cobaya'), ('CONEJO', 'Conejo'), ('ERIZO', 'Erizo'), ('HURON', 'HurÓn'), ('PEZ', 'Pez'), ('REPTIL', 'Reptil'))), ('Otros', 'Otros')], max_length=25, verbose_name='Especie'),
+            model_name="animal",
+            name="specie",
+            field=models.CharField(
+                choices=[
+                    (
+                        "Perro",
+                        (
+                            ("PASTOR ALEMAN", "Pastor Alemán"),
+                            ("PITWEILER", "Pitweiler"),
+                        ),
+                    ),
+                    ("Gato", (("HABANA", "Habana"), ("ELFO", "Elfo"))),
+                    (
+                        "Exótico",
+                        (
+                            ("AVE", "Ave"),
+                            ("ARAÑA", "Araña"),
+                            ("CHINCHILLA", "Chinchilla"),
+                            ("COBAYA", "Cobaya"),
+                            ("CONEJO", "Conejo"),
+                            ("ERIZO", "Erizo"),
+                            ("HURON", "HurÓn"),
+                            ("PEZ", "Pez"),
+                            ("REPTIL", "Reptil"),
+                        ),
+                    ),
+                    ("Otros", "Otros"),
+                ],
+                max_length=25,
+                verbose_name="Especie",
+            ),
         ),
     ]

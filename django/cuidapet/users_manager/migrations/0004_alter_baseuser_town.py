@@ -6,13 +6,30 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users_manager', '0003_remove_baseuser_first_name_and_more'),
+        ("users_manager", "0003_remove_baseuser_first_name_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='baseuser',
-            name='town',
-            field=models.CharField(blank=True, choices=[('06', 'Badajoz'), ('22', 'Huesca'), ('23', 'Jaén'), ('28', 'Madrid'), ('39', 'Cantabria'), ('48', 'Bizkaia'), ('14', 'Córdoba'), ('24', 'León'), ('33', 'Asturias'), ('42', 'Soria')], max_length=2, null=True, verbose_name='Ciudad'),
+            model_name="baseuser",
+            name="town",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("06", "Badajoz"),
+                    ("22", "Huesca"),
+                    ("23", "Jaén"),
+                    ("28", "Madrid"),
+                    ("39", "Cantabria"),
+                    ("48", "Bizkaia"),
+                    ("14", "Córdoba"),
+                    ("24", "León"),
+                    ("33", "Asturias"),
+                    ("42", "Soria"),
+                ],
+                max_length=2,
+                null=True,
+                verbose_name="Ciudad",
+            ),
         ),
     ]

@@ -6,13 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pet_manager', '0012_alter_animal_specie'),
+        ("pet_manager", "0012_alter_animal_specie"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='marking',
-            name='marking_type',
-            field=models.CharField(choices=[('00', 'Anilla'), ('01', 'Branding'), ('02', 'Collar de seguimiento'), ('03', 'Etiqueta'), ('04', 'Marca'), ('05', 'Microchip'), ('06', 'Tatuaje'), ('07', 'Tinta')], default='05', max_length=2, verbose_name='Tipo de marca'),
+            model_name="marking",
+            name="marking_type",
+            field=models.CharField(
+                choices=[
+                    ("00", "Anilla"),
+                    ("01", "Branding"),
+                    ("02", "Collar de seguimiento"),
+                    ("03", "Etiqueta"),
+                    ("04", "Marca"),
+                    ("05", "Microchip"),
+                    ("06", "Tatuaje"),
+                    ("07", "Tinta"),
+                ],
+                default="05",
+                max_length=2,
+                verbose_name="Tipo de marca",
+            ),
         ),
     ]

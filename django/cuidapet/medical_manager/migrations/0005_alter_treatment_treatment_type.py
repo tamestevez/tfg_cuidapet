@@ -6,13 +6,34 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('medical_manager', '0004_rename_vacine_vaccine_and_more'),
+        ("medical_manager", "0004_rename_vacine_vaccine_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='treatment',
-            name='treatment_type',
-            field=models.CharField(choices=[('00', 'Desparasitación'), ('01', 'Fisioterapia'), ('02', 'Inyecciones'), ('03', 'Medicamentos Orales'), ('04', 'Quimioterapia'), ('05', 'Radioterapia'), ('06', 'Terapia Conductual'), ('07', 'Terapia de Fluidos'), ('08', 'Terapia de Oxígeno'), ('09', 'Terapia Hormonal'), ('10', 'Terapia Laser'), ('11', 'Terapia Nutricional'), ('12', 'Tratamientos Dentales'), ('13', 'Tratamientos Homeopáticos'), ('14', 'Tratamientos Tópicos')], default='00', max_length=2, verbose_name='Tipo de tratamiento'),
+            model_name="treatment",
+            name="treatment_type",
+            field=models.CharField(
+                choices=[
+                    ("00", "Desparasitación"),
+                    ("01", "Fisioterapia"),
+                    ("02", "Inyecciones"),
+                    ("03", "Medicamentos Orales"),
+                    ("04", "Quimioterapia"),
+                    ("05", "Radioterapia"),
+                    ("06", "Terapia Conductual"),
+                    ("07", "Terapia de Fluidos"),
+                    ("08", "Terapia de Oxígeno"),
+                    ("09", "Terapia Hormonal"),
+                    ("10", "Terapia Laser"),
+                    ("11", "Terapia Nutricional"),
+                    ("12", "Tratamientos Dentales"),
+                    ("13", "Tratamientos Homeopáticos"),
+                    ("14", "Tratamientos Tópicos"),
+                ],
+                default="00",
+                max_length=2,
+                verbose_name="Tipo de tratamiento",
+            ),
         ),
     ]

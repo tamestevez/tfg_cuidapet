@@ -6,13 +6,35 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pet_manager', '0010_alter_passport_nationality'),
+        ("pet_manager", "0010_alter_passport_nationality"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='animal',
-            name='specie',
-            field=models.CharField(choices=[('Perro', ()), ('Gato', (('HABANA', 'Habana'), ('ELFO', 'Elfo'))), ('Exótico', (('AVE', 'Ave'), ('ARAÑA', 'Araña'), ('CHINCHILLA', 'Chinchilla'), ('COBAYA', 'Cobaya'), ('CONEJO', 'Conejo'), ('ERIZO', 'Erizo'), ('HURON', 'HurÓn'), ('PEZ', 'Pez'), ('REPTIL', 'Reptil'))), ('Otros', 'Otros')], max_length=50, verbose_name='Especie'),
+            model_name="animal",
+            name="specie",
+            field=models.CharField(
+                choices=[
+                    ("Perro", ()),
+                    ("Gato", (("HABANA", "Habana"), ("ELFO", "Elfo"))),
+                    (
+                        "Exótico",
+                        (
+                            ("AVE", "Ave"),
+                            ("ARAÑA", "Araña"),
+                            ("CHINCHILLA", "Chinchilla"),
+                            ("COBAYA", "Cobaya"),
+                            ("CONEJO", "Conejo"),
+                            ("ERIZO", "Erizo"),
+                            ("HURON", "HurÓn"),
+                            ("PEZ", "Pez"),
+                            ("REPTIL", "Reptil"),
+                        ),
+                    ),
+                    ("Otros", "Otros"),
+                ],
+                max_length=50,
+                verbose_name="Especie",
+            ),
         ),
     ]
