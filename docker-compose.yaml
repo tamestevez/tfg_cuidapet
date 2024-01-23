@@ -1,6 +1,20 @@
 version: "3.8"
 services:
 
+  frontend:
+    build:
+      context: .
+      dockerfile: ./angular/Dockerfile
+    working_dir: /app/
+    volumes:
+      - ./angular/cuidapet-angular:/app/:rw
+      - node_modules:/app/node_modules:rw
+    ports:
+      - 4200:4200
+    command: bash -c "npm install && npm run start"
+
+
+
   backend:
     build:
       context: .
@@ -39,3 +53,4 @@ services:
 
 volumes:
   postgres:
+  node_modules:
