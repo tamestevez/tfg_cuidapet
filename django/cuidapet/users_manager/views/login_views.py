@@ -13,21 +13,30 @@ class GenerateTwoFactorView(views.APIView):
         email=request.data.get('email')
         if not email:
             logging.error("Generate Two Factor View Error: "+EMAIL_REQUIRED)
-            return Response({'detail': EMAIL_REQUIRED}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': EMAIL_REQUIRED},
+                             status=status.HTTP_400_BAD_REQUEST)
         password=request.data.get('password')
         if not password:
             logging.error("Generate Two Factor View Error: "+PASSWORD_REQUIRED)
-            return Response({'detail': PASSWORD_REQUIRED}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': PASSWORD_REQUIRED},
+                            status=status.HTTP_400_BAD_REQUEST)
         user=authenticate(email=email, password=password)
         if not user:
             logging.error("Generate Two Factor View Error: "+USER_ERROR)
-            return Response({'detail': USER_ERROR}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({'detail': USER_ERROR}, 
+                            status=status.HTTP_401_UNAUTHORIZED)
         if not user.opt_generator_code:
             logging.info("Generate Two Factor View Info: OK")
-            return Response({'otpauth_url':pyotp.totp.TOTP(pyotp.random_base32()).provisioning_uri(issuer_name="Cuidapet")}, status=status.HTTP_200_OK)
+            return Response(
+                {'otpauth_url':pyotp.totp.TOTP(pyotp.random_base32()).provisioning_uri(issuer_name="Cuidapet"),
+                 'user_email':email},
+                status=status.HTTP_200_OK)
         logging.info("Generate Two Factor View Info: OK")
-        return Response(status=status.HTTP_200_OK)
-    
+        return Response({'user_email':email},status=status.HTTP_200_OK)
+
+class LoginViews(views.APIView):
+    permission_classes=(permissions.AllowAny,)
+
 
         
 
