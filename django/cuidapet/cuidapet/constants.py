@@ -202,3 +202,7 @@ ALERGY = [
     ("19", "Sustancias presentes en juguetes y accesorios para mascotas"),
     ("20", "Virus y bacterias"),
 ]
+
+EMAIL_REQUIRED="Se requiere el correo electrónico."
+PASSWORD_REQUIRED="Se requiere la contraseña."
+USER_ERROR="Usuario no encontrado."

@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from users_manager import views as user_views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/two-factor-generate/", user_views.GenerateTwoFactorView.as_view()),
 ]
