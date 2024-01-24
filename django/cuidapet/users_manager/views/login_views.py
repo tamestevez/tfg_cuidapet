@@ -9,7 +9,7 @@ from cuidapet.constants import EMAIL_REQUIRED, PASSWORD_REQUIRED, USER_ERROR
 class GenerateTwoFactorView(views.APIView):
     permission_classes=(permissions.AllowAny,)
 
-    def post(self, request, format=None):
+    def post(self, request):
         email=request.data.get('email')
         if not email:
             logging.error("Generate Two Factor View Error: "+EMAIL_REQUIRED)
@@ -27,6 +27,7 @@ class GenerateTwoFactorView(views.APIView):
             return Response({'otpauth_url':pyotp.totp.TOTP(pyotp.random_base32()).provisioning_uri(issuer_name="Cuidapet")}, status=status.HTTP_200_OK)
         logging.info("Generate Two Factor View Info: OK")
         return Response(status=status.HTTP_200_OK)
+    
 
         
 
