@@ -206,3 +206,4 @@ ALERGY = [
 EMAIL_REQUIRED="Se requiere el correo electrónico."
 PASSWORD_REQUIRED="Se requiere la contraseña."
 USER_ERROR="Usuario no encontrado."
+OTP_ERROR="Código OTP incorrecto."

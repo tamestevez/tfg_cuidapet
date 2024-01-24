@@ -33,7 +33,7 @@ class BaseUser(AbstractUser):
     first_name = None
     last_login = None
     email = models.EmailField(unique=True)
-    opt_generator_code = models.CharField(max_length=50, blank=True, null=True)
+    otp_generator_code = models.CharField(max_length=50, blank=True, null=True)
     token_password = models.CharField(max_length=255, blank=True, null=True)
     name = models.CharField(
         blank=True,

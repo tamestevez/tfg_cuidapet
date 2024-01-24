@@ -1,1 +1,1 @@
-from .login_views import GenerateTwoFactorView
+from .login_views import GenerateTwoFactorView, LoginView, LogoutView

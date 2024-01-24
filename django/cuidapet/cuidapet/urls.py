@@ -21,5 +21,8 @@ from users_manager import views as user_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/two-factor-generate/", user_views.GenerateTwoFactorView.as_view()),
+    path("api/two-factor-generate/",
+          user_views.GenerateTwoFactorView.as_view()),
+    path("api/login/", user_views.LoginView.as_view()),
+    path("api/logout/", user_views.LogoutView.as_view()),
 ]

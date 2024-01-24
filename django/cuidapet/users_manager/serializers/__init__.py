@@ -1,0 +1,1 @@
+from .custom_jwt_serializers import CustomTokenObtainPairSerializer
