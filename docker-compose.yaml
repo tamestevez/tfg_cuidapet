@@ -11,7 +11,7 @@ services:
       - node_modules:/app/node_modules:rw
     ports:
       - 4200:4200
-    command: bash -c "npm install && npm run start"
+    command: bash -c "npm install && npm run -- ng serve --host 0.0.0.0 --disable-host-check"
 
 
 
