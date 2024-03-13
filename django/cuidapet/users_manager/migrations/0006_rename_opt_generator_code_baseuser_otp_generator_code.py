@@ -6,13 +6,13 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users_manager', '0005_alter_baseuser_town'),
+        ("users_manager", "0005_alter_baseuser_town"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='baseuser',
-            old_name='opt_generator_code',
-            new_name='otp_generator_code',
+            model_name="baseuser",
+            old_name="opt_generator_code",
+            new_name="otp_generator_code",
         ),
     ]

@@ -90,6 +90,7 @@ class LoginView(views.APIView):
 
 class LogoutView(views.APIView):
     permission_classes = (permissions.IsAuthenticated,)
+
     def post(self, request):
         logging.info("Usuario saliendo de la plataforma.")
         logout(request)
