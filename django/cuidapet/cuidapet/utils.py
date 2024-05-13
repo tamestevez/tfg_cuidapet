@@ -7,9 +7,7 @@ api_switch = {
     "dogs": "https://api.thedogapi.com/v1/breeds",
     "cats": "https://api.thecatapi.com/v1/breeds",
     "towns": (
-        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datas"
-        "ets/provincias-espanolas/records?order_by=cod_ccaa%2Cprovincia&"
-        "limit=52"
+        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-spain-provincia/records?order_by=acom_code&limit=52"
     ),
 }
 

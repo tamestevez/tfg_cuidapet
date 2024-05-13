@@ -57,7 +57,7 @@ SPECIE = (
 )
 
 TOWN = [
-    (town["codigo"], town["provincia"])
+    (town["prov_code"], town["prov_name"])
     for town in get_constants("towns")["results"]
 ]
 
