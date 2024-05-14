@@ -7,21 +7,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from users_manager.models import BaseUser
 from users_manager.serializers import ListUserSerializer, ProfileUserSerializer
 
-
-def check_user(user):
-    if not user:
-        logging.error("Ususario no encontrado")
-        return Response(
-            {"detail": "Ususario no encontrado"},
-            status=status.HTTP_404_NOT_FOUND,
-        )
-    if not BaseUser.objects.filter(email=user.email).first():
-        logging.error("Ususario no encontrado")
-        return Response(
-            {"detail": "Ususario no encontrado"},
-            status=status.HTTP_404_NOT_FOUND,
-        )
-    return None
+from .utils import check_user
 
 
 class UserViewSet(viewsets.ViewSet):

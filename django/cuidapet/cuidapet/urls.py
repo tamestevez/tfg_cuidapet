@@ -26,6 +26,10 @@ from users_manager import views as user_views
 
 api_urls = {
     "user": (user_views.UserViewSet, "UserProfile"),
+    "user/change-password": (
+        user_views.ChangePasswordViewSet,
+        "ChangePasswordProfile",
+    ),
 }
 
 router = routers.DefaultRouter()

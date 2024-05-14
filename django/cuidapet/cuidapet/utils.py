@@ -10,6 +10,8 @@ api_switch = {
         "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-spain-provincia/records?order_by=acom_code&limit=52"
     ),
 }
+
+
 def get_constants(const):
     result = requests.get(api_switch.get(const))
     if result.status_code == 200:
