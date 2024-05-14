@@ -1,6 +1,5 @@
 import logging
 
-from cuidapet.constants import ROLE
 from rest_framework import permissions, status, viewsets
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -57,7 +56,9 @@ class UserViewSet(viewsets.ViewSet):
         if result:
             return result
         return Response(
-            ProfileUserSerializer(BaseUser.objects.filter(pk=pk).first()).data,
+            ProfileUserSerializer(
+                BaseUser.objects.filter(pk=request.user.pk).first()
+            ).data,
             status=status.HTTP_200_OK,
         )
 
@@ -81,13 +82,14 @@ class UserViewSet(viewsets.ViewSet):
                     {"detail": "Ya existe usuario."},
                     status=status.HTTP_400_BAD_REQUEST,
                 )
-        if not "email" or not "phone_number" in request.data:
+        if "email" not in request.data or "phone_number" not in request.data:
             logging.error(
                 "Error: Correo electrónico o número de teléfono incompletos."
             )
             return Response(
                 {
-                    "detail": "Correo electrónico o número de teléfono incompletos."
+                    "detail": "Correo electrónico o número de teléfono"
+                    " incompletos."
                 },
                 status=status.HTTP_400_BAD_REQUEST,
             )
