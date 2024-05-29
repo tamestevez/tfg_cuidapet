@@ -13,9 +13,13 @@ api_switch = {
 
 
 def get_constants(const):
-    result = requests.get(api_switch.get(const))
-    if result.status_code == 200:
-        return result.json()
-    else:
-        logging.error("Error en la conexión con la API de " + str(const))
+    try:
+        result = requests.get(api_switch.get(const))
+        if result.status_code == 200:
+            return result.json()
+        else:
+            logging.error("Error en la conexión con la API de " + str(const))
+            return None
+    except Exception as e:
+        logging.error("Error: "+str(e))
         return None

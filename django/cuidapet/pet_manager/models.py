@@ -3,7 +3,7 @@ from cuidapet.constants import (
     COLOR,
     DEATH_CAUSE,
     MARKING_TYPE,
-    NATIONALITY,
+    # NATIONALITY,
     ROLE,
     SEX,
     SPECIE,
@@ -114,12 +114,12 @@ class Passport(models.Model):
     veterinary_clinic = models.ForeignKey(
         BaseUser, on_delete=models.CASCADE, verbose_name="Clinica veterinaria"
     )
-    nationality = models.CharField(
-        max_length=2,
-        choices=NATIONALITY,
-        default="SPAIN",
-        verbose_name="Nacionalidad",
-    )
+    # nationality = models.CharField(
+    #     max_length=2,
+    #     choices=NATIONALITY,
+    #     default="SPAIN",
+    #     verbose_name="Nacionalidad",
+    # )
     animal = models.ForeignKey(
         Animal, on_delete=models.CASCADE, null=True, verbose_name="Animal"
     )

@@ -1,4 +1,4 @@
-from cuidapet.constants import NATIONALITY
+# from cuidapet.constants import NATIONALITY
 from django.db import models
 
 
@@ -11,12 +11,12 @@ class InsurancePolice(models.Model):
     helpline_abroad = models.CharField(
         max_length=25, verbose_name="Teléfono internacional"
     )
-    nationality = models.CharField(
-        max_length=2,
-        choices=NATIONALITY,
-        default="SPAIN",
-        verbose_name="Nacionalidad",
-    )
+    # # nationality = models.CharField(
+    #     max_length=2,
+    #     choices=NATIONALITY,
+    #     default="SPAIN",
+    #     verbose_name="Nacionalidad",
+    # )
     start_date = models.DateTimeField(verbose_name="Fecha de inicio")
     renovation_date = models.DateTimeField(verbose_name="Fecha de renovación")
 

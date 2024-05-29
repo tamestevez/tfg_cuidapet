@@ -1,9 +1,9 @@
 from .utils import get_constants
 
-NATIONALITY = [
-    (country["cca2"], country["translations"]["spa"]["common"])
-    for country in get_constants("nationalities")
-]
+# NATIONALITY = [
+#     (country["cca2"], country["translations"]["spa"]["common"])
+#     for country in get_constants("nationalities")
+# ]
 
 SEX = [
     ("F", "FEMIA"),

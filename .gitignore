@@ -1,4 +1,3 @@
 *.pyc
-django/cuidapet/cuidapet/__pycache__/constants.cpython-311.pyc
-django/cuidapet/cuidapet/__pycache__/utils.cpython-311.pyc
-django/cuidapet/cuidapet/__pycache__/utils.cpython-311.pyc
+django/cuidapet/cuidapet/__pycache__/*
+

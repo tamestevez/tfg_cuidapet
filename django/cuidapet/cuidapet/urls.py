@@ -52,4 +52,6 @@ urlpatterns = [
         "api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"
     ),
     path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    path("api/forgot-password/", user_views.ForgotPasswordView.as_view()),
+    path("api/reset-password/", user_views.ResetPasswordView.as_view()),
 ]

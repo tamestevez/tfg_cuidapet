@@ -6,8 +6,11 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from users_manager.models import BaseUser
 from users_manager.serializers import ListUserSerializer, ProfileUserSerializer
-
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from .utils import check_user
+from cuidapet.settings import BASE_URL
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 
 class UserViewSet(viewsets.ViewSet):
@@ -79,7 +82,7 @@ class UserViewSet(viewsets.ViewSet):
                 },
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        BaseUser.objects.create(
+        user=BaseUser.objects.create(
             email=request.data["email"],
             name=request.data["name"],
             surnames=request.data["surnames"],
@@ -91,7 +94,32 @@ class UserViewSet(viewsets.ViewSet):
             role=request.data["role"]
             if request.user.role == "ADMI"
             else "PROP",
+            toke_password= PasswordResetTokenGenerator().make_token(user)
         ).save()
+
+        try:
+            url = BASE_URL + "/api/reset-password/" + user.token_password
+            msg_plain = render_to_string(
+                "password/reset_password.txt", {"name": user.name, "url": url}
+            )
+            msg_html = render_to_string(
+                "password/reset_password.html", {"name": user.name, "url": url}
+            )
+            send_mail(
+                subject="Recuperación de contraseña [Cuidapet]",
+                message=msg_plain,
+                html_message=msg_html,
+                from_email=None,
+                recipient_list=[user.email],
+                fail_silently=False,
+            )
+        except Exception as e:
+            logging.error("Error en ForgotPassword " + str(e))
+            return Response(
+                {"detail": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
+
         return Response(
             {"detail": "Usuario creado correctamente"},
             status=status.HTTP_200_OK,

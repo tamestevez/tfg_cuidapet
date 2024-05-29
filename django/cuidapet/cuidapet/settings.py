@@ -63,7 +63,7 @@ ROOT_URLCONF = "cuidapet.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -183,3 +183,8 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
     "TOKEN_OBTAIN_SERIALIZER": "users_manager.serializers.CustomTokenObtainPairSerializer",
 }
+
+
+BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
