@@ -1,9 +1,8 @@
-from cuidapet.constants import (
+from cuidapet.constants import (  # NATIONALITY,
     ATTITUDES,
     COLOR,
     DEATH_CAUSE,
     MARKING_TYPE,
-    # NATIONALITY,
     ROLE,
     SEX,
     SPECIE,

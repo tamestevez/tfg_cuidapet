@@ -48,7 +48,7 @@ class ForgotPasswordView(views.APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request):
-        if not 'email' in request.data:
+        if "email" not in request.data:
             logging.error("No existe correo en la petición")
             return Response(status=status.HTTP_400_BAD_REQUEST)
         user = BaseUser.objects.filter(email=request.data["email"]).first()
@@ -89,7 +89,10 @@ class ResetPasswordView(views.APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request):
-        if not 'token_password' in request.data or not 'new_password' in request.data:
+        if (
+            "token_password" not in request.data
+            or "new_password" not in request.data
+        ):
             logging.error("Parametros no encontrados en la petición")
             return Response(status=status.HTTP_400_BAD_REQUEST)
         user = BaseUser.objects.filter(

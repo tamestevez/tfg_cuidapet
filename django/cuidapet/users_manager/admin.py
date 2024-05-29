@@ -20,7 +20,7 @@ class BaseUserAdmin(admin.ModelAdmin):
                     "address",
                     "town",
                     "role",
-                    "token_password"
+                    "token_password",
                 ]
             },
         )

@@ -21,5 +21,5 @@ def get_constants(const):
             logging.error("Error en la conexión con la API de " + str(const))
             return None
     except Exception as e:
-        logging.error("Error: "+str(e))
+        logging.error("Error: " + str(e))
         return None

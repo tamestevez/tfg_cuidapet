@@ -1,16 +1,17 @@
 import logging
 
+from cuidapet.settings import BASE_URL
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from rest_framework import permissions, status, viewsets
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from users_manager.models import BaseUser
 from users_manager.serializers import ListUserSerializer, ProfileUserSerializer
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
+
 from .utils import check_user
-from cuidapet.settings import BASE_URL
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
 
 
 class UserViewSet(viewsets.ViewSet):
@@ -82,7 +83,7 @@ class UserViewSet(viewsets.ViewSet):
                 },
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        user=BaseUser.objects.create(
+        BaseUser.objects.create(
             email=request.data["email"],
             name=request.data["name"],
             surnames=request.data["surnames"],
@@ -94,9 +95,10 @@ class UserViewSet(viewsets.ViewSet):
             role=request.data["role"]
             if request.user.role == "ADMI"
             else "PROP",
-            toke_password= PasswordResetTokenGenerator().make_token(user)
         ).save()
-
+        user = BaseUser.objects.filter(email=request.data["email"]).first()
+        user.token_password = PasswordResetTokenGenerator().make_token(user)
+        user.save()
         try:
             url = BASE_URL + "/api/reset-password/" + user.token_password
             msg_plain = render_to_string(
