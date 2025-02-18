@@ -23,6 +23,7 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 from users_manager import views as user_views
+from pet_manager import views as pet_views
 
 api_urls = {
     "user": (user_views.UserViewSet, "UserProfile"),
@@ -30,6 +31,7 @@ api_urls = {
         user_views.ChangePasswordViewSet,
         "ChangePasswordProfile",
     ),
+
 }
 
 router = routers.DefaultRouter()
