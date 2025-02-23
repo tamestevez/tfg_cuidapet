@@ -1,0 +1,71 @@
+<div class="container">
+    <header class="header fixed-header top-header">
+          
+      <div class="logo">
+          <a href="/">
+              <img src="assets/logo-icon.png" alt="Huella animal" width="30" height="30">
+              Cuidapet
+          </a>
+      </div>
+      <div class="menu-header">
+      <div class="controls">
+      <select class="language-selector">
+        <option>Español</option>
+        <option>Gallego</option>
+        <option>Catalán</option>
+        <option>Euskera</option>
+      </select>
+      </div>
+    <!-- Menú hamburguesa -->
+      <div class="menu-container">
+          <button class="btn-outline" (click)="toggleMenu()">
+          Mi perfil
+          </button>
+          <ul class="menu" [class.show]="menuOpen">
+              <li (click)="goToProfile()">Perfil</li>
+              <li (click)="changePassword()">Cambiar Contraseña</li>
+              <li (click)="contactSupport()">Contactar con Soporte</li>
+              <li class="danger" (click)="deleteAccount()">Eliminar Cuenta</li>
+          </ul>
+      </div>
+  
+  
+      <button class="btn-outline" (click)="logout()">Cerrar Sesión</button>
+      </div>
+  </header>
+      
+      <main>
+        <div class="admin-dashboard">
+          <div class="usuarios-container">
+            <header class="titulo">
+                <a href="/private/admin/">Volver</a>
+                <h2>Usuarios</h2>
+                <button class="add-user-btn">+ Añadir usuario</button>
+            </header>
+        
+            <div class="usuarios-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios">
+                            <td>{{ usuario.nombre }}</td>
+                            <td>{{ usuario.email }}</td>
+                            <td>{{ usuario.phone }}</td>
+                            <td>{{ usuario.rol }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+          
+        </div>
+      </main>
+    </div>

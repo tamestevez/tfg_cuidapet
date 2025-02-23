@@ -1,0 +1,45 @@
+<div class="container">
+    <header class="header fixed-header top-header">
+        
+        <div class="logo">
+          <a href="/">
+            <img src="assets/logo-icon.png" alt="Huella animal" width="30" height="30">
+            Cuidapet
+          </a>
+        </div>
+        <div class="controls">
+        <select class="language-selector">
+          <option>Español</option>
+          <option>Gallego</option>
+          <option>Catalán</option>
+          <option>Euskera</option>
+        </select>
+        <button  class="btn-outline"><a href="/adoptions">Adopciones</a></button>
+        <button class="btn-primary"><a class="btn-primary" href="/login">Iniciar sesión</a></button>
+      </div>
+    </header>
+    
+    <main class="main">
+        <div *ngIf="animal" class="animal-info">
+            <h1>{{ animal.name }}</h1>
+            <div class="content">
+                <img class="foto-info" [src]="animal.image" [alt]="animal.name">
+                <div class="details">
+                    <h3><strong>Información del Animal</strong></h3>
+                    <p><strong>Fecha de nacimiento:</strong> {{ animal.date }}</p>
+                    <p><strong>Sexo:</strong> {{ animal.sex }}</p>
+                    <p><strong>Actitudes:</strong> {{ animal.traits }}</p>
+                    <h3><strong>Información de Protectora</strong></h3>
+                    <p><strong>Nombre:</strong> Patitas </p>
+                    <p><strong>Teléfono:</strong> 123456789 </p>
+                    <p><strong>Email:</strong> patitas&#64;patitas.com </p>
+                    <p><strong>Localidad:</strong> Calle Patitas 123, {{ animal.town }}</p>
+                    <button class="btn-primary" ><a class="btn-primary" href="/adoptions">← Volver</a></button>
+                    <button class="contact-btn">Contactar</button>
+                </div>
+            </div>
+        </div>
+        
+        <p *ngIf="!animal">Animal no encontrado</p>
+    </main>
+  </div>

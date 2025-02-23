@@ -1,0 +1,263 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    background: linear-gradient(to bottom, #f5f3ff, #ffffff);
+    padding-top: 80px; /* Asegura espacio para el header fijo */
+  }
+  
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    z-index: 1000;
+  }
+  
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+  }
+  
+  .header {
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6b46c1;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .language-selector {
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: black;
+  }
+  
+  .btn-outline {
+    border: 1px solid black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: black;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .main {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .icon {
+    font-size: 64px;
+    color: #6b46c1;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+  
+  .description {
+    color: #4a5568;
+    margin-top: 8px;
+    max-width: 400px;
+  }
+  
+  a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color del texto sin cambios */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .card h2 {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .primary-btn {
+    background: black;
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background: #333;
+  }
+  
+  /* ======== RESPONSIVE ======== */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav {
+      margin-top: 10px;
+    }
+  
+    .content {
+      height: auto;
+      padding-top: 20px;
+    }
+  }
+  
+  .login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    margin-top: 100px;
+  }
+  
+  .login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* 📌 Campos del formulario */
+  .login-box label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .login-box input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  /* 📌 Enlace de "Olvidé la contraseña" */
+  .forgot-password {
+    font-size: 13px;
+    color: #5d3fd3;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* 📌 Botón de Acceder */
+  .btn {
+    width: 100%;
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+  }
+  
+  /* 📌 Responsive */
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 20px;
+    }
+  
+    .login-box {
+      padding: 20px;
+    }
+  
+    .btn {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .nav-btn {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 18px;
+    }
+  
+    .login-box {
+      padding: 15px;
+    }
+  
+    .btn {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }

@@ -1,0 +1,60 @@
+<div class="container">
+    <header class="header fixed-header top-header">
+        
+        <div class="logo">
+            <a href="/">
+                <img src="assets/logo-icon.png" alt="Huella animal" width="30" height="30">
+                Cuidapet
+            </a>
+        </div>
+        <div class="controls">
+        <select class="language-selector">
+          <option>Español</option>
+          <option>Gallego</option>
+          <option>Catalán</option>
+          <option>Euskera</option>
+        </select>
+        <button class="btn-primary"><a href="/login">Iniciar sesión</a></button>
+      </div>
+    </header>
+    
+    <main>
+        <h1><strong>Animales en Adopción</strong></h1>
+        
+        <div class="filters">
+            <button class="btn-primary" ><a href="/">← Volver</a></button>
+            <div >
+                <select class="selector-filtro" id="animalFilter" [(ngModel)]="filtroTipoAnimal" (change)="filtrarAnimales()">
+                  <option value="">Tipos de animales</option>
+                  <option *ngFor="let tipo of tiposAnimales" [value]="tipo">{{ tipo }}</option>
+                </select>
+            </div>
+            <div>
+                <select  class="selector-filtro" id="filtroTown" [(ngModel)]="filtroTown" (change)="filtrarAnimales()">
+                  <option value="">Población</option>
+                  <option *ngFor="let town of townsDisponible" [value]="town">{{ town }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="adoption-grid">
+            <!-- Tarjeta de Animal 1 -->
+
+            <div *ngFor="let animal of animalesFiltrados" class="adoption-card">
+                <div class="image-placeholder">
+                    <a href="/adoptions/{{animal.id}}">
+                        <img [src]="animal.image" [alt]="animal.name">
+                    </a>
+                </div>
+                <div class="adoption-info">
+                    <!-- <strong>{{ animal.name }}</strong><br> -->
+                    <strong><p>{{ animal.sex }}</p></strong>
+                    <span class="date">{{ animal.date }}</span>
+                    <p>{{ animal.town }}</p>
+                </div>
+                <!-- <button class="btn-primary" ><a class="btn-primary" href="/adoptions/{{animal.id}}">Ver más</a></button> -->
+                <!-- <button [routerLink]="['/animal', animal.id]">Ver más</button> -->
+            </div>
+        </div>
+    </main>
+  </div>
